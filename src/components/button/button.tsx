@@ -1,5 +1,13 @@
+import type { ReactNode } from "react"
+
+// stub StackViewProps type to keep ts happy for now
+type StackViewProps = { props?: unknown }
+// stub BoxSizes type to keep ts happy for now
+// TODO: this may also be an opportunity to reimagine boxSizes
+type BoxSizes = { sm: object; md: object; lg: object }
+
 export type ButtonProps = {
-  children?: any
+  children?: ReactNode
 
   /**
    * "Soft disables" button by adding an `aria-disabled` attribute and preventing `onClick` and `keyDown` events for "space" / "enter". This approach allows composing components (such as `Tooltip`) to still bubble up their events, while ensuring that clicking the button or submitting a form is prevented.
@@ -35,17 +43,17 @@ export type ButtonProps = {
    * Renders an [Icon](/icon) in the center of the button. Pass a string or any valid `Icon` props.
    * Must pass a [`title`](/button#title) or [`tooltip.title`](/tooltip#title) when using icon-only buttons.
    */
-  icon?: string | Object
+  icon?: string | object
 
   /**
    * Same as above, but renders an icon in the left portion of the button.
    */
-  iconLeft?: string | Object
+  iconLeft?: string | object
 
   /**
    * Same as above, but renders an icon in the right portion of the button.
    */
-  iconRight?: string | Object
+  iconRight?: string | object
 
   /**
    * Sizes the button using values defined in [boxSizes](/theming)
@@ -55,7 +63,7 @@ export type ButtonProps = {
   /**
    * Renders a [`<Spinner />`](/spinner) in the center of the button. Accepts any valid Spinner props.
    */
-  spinner?: any
+  spinner?: unknown
 
   /**
    * Uses a 1:1 ratio for sizing the button.
@@ -70,7 +78,7 @@ export type ButtonProps = {
   /**
    * Renders a text string in the center of the button.
    */
-  title?: string | number
+  title?: string
 
   /**
    * Where the browser should navigate to when pressed. If you need any element here other than `<a>`, remember to use the `as` prop.
@@ -85,7 +93,7 @@ export type ButtonProps = {
   /**
    * Wraps button in a [`<Tooltip />`](./tooltip). Accepts any valid Tooltip props.
    */
-  tooltip?: string | Object
+  tooltip?: string | object
 
   /**
    * Sets the button type to `button`, `submit`, or `reset`. Default is `button`. Type is only valid for `<button>`s.
@@ -97,14 +105,14 @@ export type ButtonProps = {
    */
   variant?: "fill" | "outline" | "naked"
 
-  onClick?: Function
+  onClick?: () => void
 
-  onKeyDown?: Function
+  onKeyDown?: () => void
 
   /** Describes props at different breakpoints. [Read about mediaQueries](/responsive). */
   mediaQueries?: object
 } & StackViewProps
 
-export const Button = ({ children }: Partial<ButtonProps>) => (
-  <button>{children}</button>
+export const Button = ({ children, ...rest }: ButtonProps) => (
+  <button {...rest}>{children}</button>
 )
