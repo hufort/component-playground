@@ -67,3 +67,33 @@
   padding-left: 1.25rem;
   padding-right: 1.25rem;
 }
+
+.button--interaction {
+  background-color: hsla(221 91% 55% / 1);
+}
+.button--interaction:hover {
+  background-color: hsla(221 90% 50% / 1);
+}
+.button--interaction:active {
+  background-color: hsla(221 90% 45% / 1);
+}
+
+.button--create {
+  background-color: hsla(86 91% 27% / 1);
+}
+.button--create:hover {
+  background-color: hsla(86 91% 25% / 1);
+}
+.button--create:active {
+  background-color: hsla(86 91% 23% / 1);
+}
+
+.button--destroy {
+  background-color: hsla(8 60% 47% / 1);
+}
+.button--destroy:hover {
+  background-color: hsla(8 60% 45% / 1);
+}
+.button--destroy:active {
+  background-color: hsla(9 61% 43% / 1);
+}
