@@ -97,3 +97,107 @@
 .button--destroy:active {
   background-color: hsla(9 61% 43% / 1);
 }
+
+.button--outline {
+  color: hsla(0 0% 12% / 1);
+  background-color: transparent;
+  border-color: hsla(0 0% 88% / 1);
+}
+.button--outline:hover {
+  background-color: hsla(0 0% 93% / 1);
+}
+.button--outline:active {
+  background-color: hsla(0 0% 88% / 1);
+}
+.button--outline[disabled],
+.button--outline[aria-disabled="true"] {
+  color: hsla(0 0% 81% / 1) !important;
+  background-color: hsla(0 0% 97% / 1) !important;
+  border-color: hsla(0 0% 88% / 1) !important;
+  cursor: not-allowed;
+}
+
+.button--interaction.button--outline {
+  color: hsla(221 91% 55% / 1);
+  background-color: transparent;
+  border-color: hsla(221 91% 55% / 1);
+}
+.button--interaction.button--outline:hover {
+  background-color: hsla(221 89% 93% / 1);
+}
+.button--interaction.button--outline:active {
+  background-color: hsla(221 91% 91% / 1);
+}
+
+.button--create.button--outline {
+  color: hsla(86 91% 27% / 1);
+  background-color: transparent;
+  border-color: hsla(86 91% 27% / 1);
+}
+.button--create.button--outline:hover {
+  background-color: hsla(93 53% 97% / 1);
+}
+.button--create.button--outline:active {
+  background-color: hsla(95 50% 91% / 1);
+}
+
+.button--destroy.button--outline {
+  color: hsla(8 60% 47% / 1);
+  background-color: transparent;
+  border-color: hsla(8 60% 47% / 1);
+}
+.button--destroy.button--outline:hover {
+  background-color: hsla(7 60% 97% / 1);
+}
+.button--destroy.button--outline:active {
+  background-color: hsla(9 59% 93% / 1);
+}
+
+.button--ghost {
+  color: hsla(0 0% 12% / 1);
+  background-color: transparent;
+  border-color: transparent;
+}
+.button--ghost:hover {
+  background-color: hsla(0 0% 93% / 1);
+}
+.button--ghost:active {
+  background-color: hsla(0 0% 88% / 1);
+}
+.button--ghost[disabled],
+.button--ghost[aria-disabled="true"] {
+  color: hsla(0 0% 81% / 1) !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+  cursor: not-allowed;
+}
+
+.button--interaction.button--ghost {
+  color: hsla(221 91% 55% / 1);
+}
+.button--interaction.button--ghost:hover {
+  background-color: hsla(221 89% 93% / 1);
+}
+.button--interaction.button--ghost:active {
+  background-color: hsla(221 91% 91% / 1);
+}
+
+.button--create.button--ghost {
+  color: hsla(86 91% 27% / 1);
+}
+.button--create.button--ghost:hover {
+  background-color: hsla(93 53% 97% / 1);
+}
+.button--create.button--ghost:active {
+  background-color: hsla(95 50% 91% / 1);
+}
+
+.button--destroy.button--ghost {
+  color: hsla(8 60% 47% / 1);
+}
+.button--destroy.button--ghost:hover {
+  background-color: hsla(7 60% 97% / 1);
+}
+.button--destroy.button--ghost:active {
+  background-color: hsla(9 59% 93% / 1);
+}

@@ -9,6 +9,7 @@ type ButtonProps = {
   size?: "xs" | "sm" | "lg" | "xl"
   theme?: "interaction" | "create" | "destroy"
   type?: "button" | "submit" | "reset"
+  variant?: "outline" | "ghost"
 }
 
 export function Button({
@@ -19,11 +20,13 @@ export function Button({
   size,
   theme,
   type = "button",
+  variant,
   ...restProps
 }) {
   const modifierClass = {
     [styles[`button--${size}`]]: size,
     [styles[`button--${theme}`]]: theme,
+    [styles[`button--${variant}`]]: variant,
   }
 
   return (
