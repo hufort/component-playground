@@ -1,4 +1,5 @@
 import type { ReactNode } from "react"
+import styles from "./button.module.css"
 
 // stub StackViewProps type to keep ts happy for now
 type StackViewProps = { props?: unknown }

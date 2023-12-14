@@ -1,0 +1,38 @@
+.base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  height: 32px;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.default {
+  border: 1px solid var(--grays-light-neutral-45);
+  background: var(--grays-light-neutral-45);
+  color: var(--grays-light-neutral-100);
+}
+
+.default:hover {
+  border-color: var(--grays-light-neutral-24);
+  background: var(--grays-light-neutral-24);
+}
+
+.default:active {
+  border-color: var(--grays-light-neutral-12);
+  background: var(--grays-light-neutral-12);
+}
+
+.default:disabled {
+  cursor: not-allowed;
+  border-color: var(--grays-light-neutral-81);
+  background: var(--grays-light-neutral-81);
+}
+
+.default:focus {
+  outline: none;
+  border-radius: 5px;
+  box-shadow: 0 0 0 3px var(--interaction-66);
+}
