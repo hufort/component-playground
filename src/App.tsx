@@ -1,3 +1,5 @@
+import { Button } from "./components/button"
+
 import "./App.css"
 
 function App() {
@@ -9,9 +11,29 @@ function App() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        gap: "1rem",
       }}
     >
-      <button>Button</button>
+      <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+        <Button onClick={() => console.log("clicked")}>Default</Button>
+        <Button disabled>Disabled</Button>
+      </div>
+      <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+        <Button variant='outline' onClick={() => console.log("clicked")}>
+          Outline
+        </Button>
+        <Button disabled variant='outline'>
+          Disabled
+        </Button>
+      </div>
+      <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+        <Button variant='naked' onClick={() => console.log("clicked")}>
+          Naked
+        </Button>
+        <Button disabled variant='naked'>
+          Disabled
+        </Button>
+      </div>
     </div>
   )
 }
