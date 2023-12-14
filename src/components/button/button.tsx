@@ -1,3 +1,5 @@
+import React from "react"
+import { cn } from "../../utils"
 import type { ReactNode } from "react"
 import styles from "./button.module.css"
 
@@ -114,6 +116,20 @@ export type ButtonProps = {
   mediaQueries?: object
 } & StackViewProps
 
-export const Button = ({ children, ...rest }: ButtonProps) => (
-  <button {...rest}>{children}</button>
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ children, ...props }, ref) => {
+    // cn() is stand in for a more robust implementation
+    // perhaps cva
+    const className = cn(styles.base, styles.default)
+
+    return (
+      <button className={className} ref={ref} {...props}>
+        {children}
+      </button>
+    )
+  }
 )
+
+Button.displayName = "Button"
+
+export { Button }
