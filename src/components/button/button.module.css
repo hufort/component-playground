@@ -7,32 +7,80 @@
   height: 32px;
   padding: 3px 8px;
   border-radius: 4px;
+  border-style: solid;
+  border-width: 1px;
 }
 
-.default {
-  border: 1px solid var(--grays-light-neutral-45);
+.base:disabled {
+  cursor: not-allowed;
+}
+
+.base:focus {
+  outline: none;
+  border-radius: 5px;
+  box-shadow: 0 0 0 3px var(--interaction-66);
+}
+
+/* VARIANTS ============  */
+
+/* ———— fill ———————————————— */
+.fill {
+  border-color: var(--grays-light-neutral-45);
   background: var(--grays-light-neutral-45);
   color: var(--grays-light-neutral-100);
 }
 
-.default:hover {
+.fill:hover {
   border-color: var(--grays-light-neutral-24);
   background: var(--grays-light-neutral-24);
 }
 
-.default:active {
+.fill:active {
   border-color: var(--grays-light-neutral-12);
   background: var(--grays-light-neutral-12);
 }
 
-.default:disabled {
-  cursor: not-allowed;
+.fill:disabled {
   border-color: var(--grays-light-neutral-81);
   background: var(--grays-light-neutral-81);
 }
 
-.default:focus {
-  outline: none;
-  border-radius: 5px;
-  box-shadow: 0 0 0 3px var(--interaction-66);
+/* ———— outline ————————————————  */
+.outline {
+  border-color: var(--grays-light-neutral-88);
+  background: var(--grays-light-neutral-100);
+}
+
+.outline:hover {
+  border-color: var(--grays-light-neutral-88);
+  background: var(--grays-light-neutral-93);
+}
+
+.outline:active {
+  border-color: var(--grays-light-neutral-88);
+  background: var(--grays-light-neutral-88);
+}
+
+.outline:disabled {
+  border-color: var(--grays-light-neutral-88);
+  background: var(--grays-light-neutral-97);
+}
+
+/* ———— naked ————————————————  */
+.naked {
+  border-color: transparent;
+  background: transparent;
+}
+
+.naked:hover {
+  background: var(--grays-light-neutral-93);
+}
+
+.naked:active {
+  background: var(--grays-light-neutral-88);
+}
+
+.naked:disabled {
+  background: transparent;
+  color: var(--grays-light-neutral-81);
 }

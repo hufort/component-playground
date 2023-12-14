@@ -117,10 +117,10 @@ export type ButtonProps = {
 } & StackViewProps
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ children, ...props }, ref) => {
+  ({ children, variant = "fill", ...props }, ref) => {
     // cn() is stand in for a more robust implementation
     // perhaps cva
-    const className = cn(styles.base, styles.default)
+    const className = cn(styles.base, styles[variant])
 
     return (
       <button className={className} ref={ref} {...props}>

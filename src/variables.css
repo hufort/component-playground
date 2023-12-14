@@ -1,5 +1,8 @@
 #root {
   --grays-light-neutral-100: hsla(0, 0%, 100%, 1);
+  --grays-light-neutral-97: hsl(0 0% 97%);
+  --grays-light-neutral-93: hsl(0 0% 93%);
+  --grays-light-neutral-88: hsl(0 0% 88%);
   --grays-light-neutral-81: hsl(0 0% 81%);
   --grays-light-neutral-45: hsl(0 0% 45%);
   --grays-light-neutral-24: hsl(0 0% 24%);
