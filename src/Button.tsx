@@ -12,6 +12,24 @@ type ButtonProps = {
   variant?: "outline" | "ghost"
 }
 
+const BUTTON_SIZES = {
+  "xs": "button--xs",
+  "sm": "button--sm",
+  "lg": "button--lg",
+  "xl": "button--xl",
+}
+
+const BUTTON_THEMES = {
+  "interaction": "button--interaction",
+  "create": "button--create",
+  "destroy": "button--destroy",
+}
+
+const BUTTON_VARIANTS = {
+  "outline": "button--outline",
+  "ghost": "button--ghost",
+}
+
 export function Button({
   children,
   icon,
@@ -24,9 +42,9 @@ export function Button({
   ...restProps
 }) {
   const modifierClass = {
-    [styles[`button--${size}`]]: size,
-    [styles[`button--${theme}`]]: theme,
-    [styles[`button--${variant}`]]: variant,
+    [styles[BUTTON_SIZES[size]]]: size,
+    [styles[BUTTON_THEMES[theme]]]: theme,
+    [styles[BUTTON_VARIANTS[variant]]]: variant,
   }
 
   return (
