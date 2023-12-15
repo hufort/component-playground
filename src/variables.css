@@ -8,8 +8,6 @@
   --grays-light-neutral-24: hsl(0 0% 24%);
   --grays-light-neutral-12: hsl(0 0% 12%);
 
-  --interaction-66: hsla(221, 91%, 66%, 1);
-
   --primary-15: hsla(89, 92%, 15%, 1);
   --primary-21: hsla(89, 62%, 21%, 1);
   --primary-26: hsla(89, 62%, 26%, 1);
@@ -20,4 +18,26 @@
   --primary-75: hsla(88, 39%, 75%, 1);
   --primary-88: hsla(88, 31%, 88%, 1);
   --primary-91: hsla(88, 30%, 91%, 1);
+
+  --warning-49: hsla(42, 84%, 49%, 1);
+  --warning-55: hsla(42, 84%, 55%, 1);
+  --warning-63: hsla(42, 84%, 63%, 1);
+  --warning-90: hsla(42, 87%, 90%, 1);
+  --warning-94: hsla(42, 87%, 94%, 1);
+  --warning-97: hsla(42, 87%, 97%, 1);
+
+  --error-43: hsla(9, 61%, 43%, 1);
+  --error-45: hsla(8, 60%, 45%, 1);
+  --error-47: hsla(8, 60%, 47%, 1);
+  --error-85: hsla(8, 60%, 85%, 1);
+  --error-93: hsla(9, 59%, 93%, 1);
+  --error-97: hsla(9, 59%, 97%, 1);
+
+  --interaction-45: hsla(221, 90%, 45%, 1);
+  --interaction-50: hsla(221, 90%, 50%, 1);
+  --interaction-55: hsla(221, 91%, 55%, 1);
+  --interaction-66: hsla(221, 91%, 66%, 1);
+  --interaction-91: hsla(221, 91%, 91%, 1);
+  --interaction-93: hsla(221, 89%, 93%, 1);
+  --interaction-97: hsla(221, 89%, 97%, 1);
 }
