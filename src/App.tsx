@@ -1,6 +1,28 @@
 import { Button } from "./components/button"
+import { ICONS } from "./icons"
 
 import "./App.css"
+
+const Row = ({ children }: { children: React.ReactNode }) => (
+  <div
+    style={{
+      display: "flex",
+      alignItems: "start",
+      gap: "1rem",
+    }}
+  >
+    {children}
+  </div>
+)
+
+const sizes = ["xs", "sm", "md", "lg", "xl"] as const
+const themes = [
+  "default",
+  "primary",
+  "warning",
+  "error",
+  "interaction",
+] as const
 
 function App() {
   return (
@@ -9,30 +31,77 @@ function App() {
         width: "100vw",
         height: "100vh",
         display: "flex",
+        flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        gap: "1rem",
+        gap: "3rem",
       }}
     >
       <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-        <Button onClick={() => console.log("clicked")}>Default</Button>
-        <Button disabled>Disabled</Button>
+        <Row>
+          {themes.map((theme) => (
+            <Button key={theme} theme={theme}>
+              {theme}
+            </Button>
+          ))}
+          <Button disabled>Disabled</Button>
+        </Row>
+        <Row>
+          {themes.map((theme) => (
+            <Button key={theme} theme={theme} variant='outline'>
+              {theme}
+            </Button>
+          ))}
+          <Button disabled variant='outline'>
+            Disabled
+          </Button>
+        </Row>
+        <Row>
+          {themes.map((theme) => (
+            <Button key={theme} theme={theme} variant='naked'>
+              {theme}
+            </Button>
+          ))}
+          <Button disabled variant='naked'>
+            Disabled
+          </Button>
+        </Row>
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-        <Button variant='outline' onClick={() => console.log("clicked")}>
-          Outline
-        </Button>
-        <Button disabled variant='outline'>
-          Disabled
-        </Button>
+        <Row>
+          {sizes
+            .map((size) => (
+              <Button key={size} size={size}>
+                {size} button
+              </Button>
+            ))
+            .reverse()}
+        </Row>
+        <Row>
+          {sizes
+            .map((size) => (
+              <Button key={size} size={size} variant='outline'>
+                {size} button
+              </Button>
+            ))
+            .reverse()}
+        </Row>
+        <Row>
+          {sizes
+            .map((size) => (
+              <Button key={size} size={size} variant='naked'>
+                {size} button
+              </Button>
+            ))
+            .reverse()}
+        </Row>
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-        <Button variant='naked' onClick={() => console.log("clicked")}>
-          Naked
-        </Button>
-        <Button disabled variant='naked'>
-          Disabled
-        </Button>
+        <Row>
+          <Button iconRight='unicorn'>Unicorn</Button>
+          <Button iconLeft='sparkle'>Sparkle</Button>
+          <Button icon='ghost' />
+        </Row>
       </div>
     </div>
   )
