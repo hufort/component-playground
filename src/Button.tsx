@@ -10,9 +10,9 @@ function getClassName<Key extends string>(
   return key ? mapping[key] : ""
 }
 
-type ButtonSize = "xs" | "sm" | "md" | "lg" | "xl"
-type ButtonTheme = "default" | "interaction" | "create" | "destroy"
-type ButtonVariant = "fill" | "outline" | "ghost"
+type ButtonSize = "xs" | "sm" | "lg" | "xl"
+type ButtonTheme = "interaction" | "create" | "destroy"
+type ButtonVariant = "outline" | "ghost"
 type ButtonProps = {
   children: React.ReactNode
   icon?: string
@@ -26,39 +26,28 @@ type ButtonProps = {
 const SIZES: Record<ButtonSize, string> = {
   xs: "button--xs",
   sm: "button--sm",
-  md: "button--md",
   lg: "button--lg",
   xl: "button--xl",
 }
 const THEMES: Record<ButtonTheme, string> = {
-  default: "button--default",
   interaction: "button--interaction",
   create: "button--create",
   destroy: "button--destroy",
 }
 const VARIANTS: Record<ButtonVariant, string> = {
-  fill: "button--fill",
   outline: "button--outline",
   ghost: "button--ghost",
 }
-
-const DEFAULT_PROPS: Pick<ButtonProps, "size" | "theme" | "type" | "variant"> =
-  {
-    size: "md",
-    theme: "default",
-    variant: "fill",
-    type: "button",
-  }
 
 export function Button({
   children,
   icon,
   iconLeft,
   iconRight,
-  size = DEFAULT_PROPS.size,
-  theme = DEFAULT_PROPS.theme,
-  type = DEFAULT_PROPS.type,
-  variant = DEFAULT_PROPS.variant,
+  size,
+  theme,
+  type = "button",
+  variant,
   ...restProps
 }: ButtonProps) {
   const modifierClass = [
