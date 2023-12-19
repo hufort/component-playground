@@ -1,51 +1,71 @@
 import classnames from "classnames"
 import styles from "./Button.module.css"
 
+// This helper returns the class name for a given key, or an empty string if the key is undefined.
+// Could be extracted for use in other components if we were to use the pattern implemented here.
+function getClassName<Key extends string>(
+  key: Key | undefined,
+  mapping: Record<Key, string>
+): string {
+  return key ? mapping[key] : ""
+}
+
+type ButtonSize = "xs" | "sm" | "md" | "lg" | "xl"
+type ButtonTheme = "default" | "interaction" | "create" | "destroy"
+type ButtonVariant = "fill" | "outline" | "ghost"
 type ButtonProps = {
-  children?: any
-  icon?: string | Object
-  iconLeft?: string | Object
-  iconRight?: string | Object
-  size?: "xs" | "sm" | "lg" | "xl"
-  theme?: "interaction" | "create" | "destroy"
-  type?: "button" | "submit" | "reset"
-  variant?: "outline" | "ghost"
+  children: React.ReactNode
+  icon?: string
+  iconLeft?: string
+  iconRight?: string
+  size?: ButtonSize
+  theme?: ButtonTheme
+  variant?: ButtonVariant
+} & React.ButtonHTMLAttributes<HTMLButtonElement>
+
+const SIZES: Record<ButtonSize, string> = {
+  xs: "button--xs",
+  sm: "button--sm",
+  md: "button--md",
+  lg: "button--lg",
+  xl: "button--xl",
+}
+const THEMES: Record<ButtonTheme, string> = {
+  default: "button--default",
+  interaction: "button--interaction",
+  create: "button--create",
+  destroy: "button--destroy",
+}
+const VARIANTS: Record<ButtonVariant, string> = {
+  fill: "button--fill",
+  outline: "button--outline",
+  ghost: "button--ghost",
 }
 
-const BUTTON_SIZES = {
-  "xs": "button--xs",
-  "sm": "button--sm",
-  "lg": "button--lg",
-  "xl": "button--xl",
-}
-
-const BUTTON_THEMES = {
-  "interaction": "button--interaction",
-  "create": "button--create",
-  "destroy": "button--destroy",
-}
-
-const BUTTON_VARIANTS = {
-  "outline": "button--outline",
-  "ghost": "button--ghost",
-}
+const DEFAULT_PROPS: Pick<ButtonProps, "size" | "theme" | "type" | "variant"> =
+  {
+    size: "md",
+    theme: "default",
+    variant: "fill",
+    type: "button",
+  }
 
 export function Button({
   children,
   icon,
   iconLeft,
   iconRight,
-  size,
-  theme,
-  type = "button",
-  variant,
+  size = DEFAULT_PROPS.size,
+  theme = DEFAULT_PROPS.theme,
+  type = DEFAULT_PROPS.type,
+  variant = DEFAULT_PROPS.variant,
   ...restProps
-}) {
-  const modifierClass = {
-    [styles[BUTTON_SIZES[size]]]: size,
-    [styles[BUTTON_THEMES[theme]]]: theme,
-    [styles[BUTTON_VARIANTS[variant]]]: variant,
-  }
+}: ButtonProps) {
+  const modifierClass = [
+    styles[getClassName(size, SIZES)],
+    styles[getClassName(theme, THEMES)],
+    styles[getClassName(variant, VARIANTS)],
+  ]
 
   return (
     <button
@@ -53,13 +73,9 @@ export function Button({
       type={type}
       {...restProps}
     >
-      {iconLeft && (
-        <span>{iconLeft}</span>
-      )}
+      {iconLeft && <span>{iconLeft}</span>}
       {icon ? icon : children}
-      {iconRight && (
-        <span>{iconRight}</span>
-      )}
+      {iconRight && <span>{iconRight}</span>}
     </button>
   )
 }
