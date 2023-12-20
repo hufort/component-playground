@@ -14,7 +14,7 @@ type ButtonSize = "xs" | "sm" | "lg" | "xl"
 type ButtonTheme = "interaction" | "create" | "destroy"
 type ButtonVariant = "outline" | "ghost"
 type ButtonProps = {
-  children: React.ReactNode
+  children?: React.ReactNode
   icon?: string
   iconLeft?: string
   iconRight?: string
@@ -59,6 +59,8 @@ export function Button({
   return (
     <button
       className={classnames(styles.button, modifierClass)}
+      aria-disabled={restProps.disabled}
+      aria-label={icon && !children ? "Description of icon action" : undefined}
       type={type}
       {...restProps}
     >
